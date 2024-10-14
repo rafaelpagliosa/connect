@@ -1,0 +1,90 @@
+<div class="header">
+
+
+  <ion-row class="align-items-center justify-content-between">
+
+
+    <ion-col size="8" class="connect">
+      <img  src="assets/avatar.png" class="img_perfil" (click)="toquePerfil($event)">
+      CONNECT<span class="fest">fest</span>
+      <span *ngIf="idEvento">#{{idEvento}}</span>
+    </ion-col>
+
+    <ion-col size="4" class="notificacao">
+      <ion-icon (click)="toqueOpcoes()" name="list-outline"></ion-icon>
+      <div *ngIf="opcoes" class="menu d-flex flex-column align-items-start justify-content-between">
+        <ion-row class="d-flex align-items-center justify-content-start" (click)="toggleTheme()">
+          <ion-col size="auto">
+            <ion-icon class="colorIcons" *ngIf="!isDarkTheme" name="radio-button-off-outline"></ion-icon>
+            <ion-icon class="colorIcons" *ngIf="isDarkTheme" name="radio-button-on-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            Modo Escuro
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="idEvento" class="d-flex align-items-center justify-content-start"
+          (click)="roteamento('compartilhar')">
+          <ion-col size="auto">
+            <ion-icon class="colorIcons" name="share-social-sharp"></ion-icon>
+          </ion-col>
+          <ion-col>
+            Compartilhar
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="!isInicioRoute" class="d-flex align-items-center justify-content-start"
+          (click)="roteamento('sobre')">
+          <ion-col size="auto">
+            <ion-icon class="colorIcons" name="information-circle-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            Sobre
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="!isInicioRoute" class="d-flex align-items-center justify-content-start" (click)="reloadPage()">
+          <ion-col size="auto">
+            <ion-icon class="colorIcons" name="reload-sharp"></ion-icon>
+          </ion-col>
+          <ion-col>
+            Recarregar
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="idEvento" class="d-flex align-items-center justify-content-start" (click)="sair()">
+          <ion-col size="auto">
+            <ion-icon class="colorIcons" name="log-out-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+            Sair
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="perfil" class="perfil d-flex flex-column align-items-start justify-content-between">
+    <ion-row class="d-flex flex-column align-items-center justify-content-center ajuste">
+      <img src="assets/avatar.png" class="img_perfil_2">
+      <p class="nome">{{nome}}</p>
+    </ion-row>
+
+    <!-- Lista de eventos -->
+    <ion-row class="d-flex flex-column align-items-start lista-eventos dadosEventos">
+      <p class="pd-texto"><strong>Histórico <span class="fest">Connect</span></strong></p>
+      <p>Eventos Connectados: 20</p>
+      <p>Total de Interações: 20</p>
+    </ion-row>
+
+    <!-- Botão de logout no final -->
+    <ion-row class="d-flex justify-content-center w-100 mt-auto align-items-center row-sair">
+      <ion-icon name="power-sharp" class="mr-2 icon-sair"></ion-icon> &nbsp; Logout
+    </ion-row>
+
+
+  </div>
+
+
+
+</div>

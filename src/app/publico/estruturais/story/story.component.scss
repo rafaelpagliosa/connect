@@ -1,0 +1,61 @@
+/*STORIES*/
+.stories-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.stories-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.story {
+  flex: 0 0 auto;
+  width: 70px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.story-preview-ini {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #0097b2, #7ed957);
+}
+
+.story-preview {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #0097b2;
+  overflow: hidden;
+}
+
+.story-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.iconAdd {
+  color: #fff;
+}
+
+.modal-open {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /* Remove a rolagem */
+}

@@ -1,0 +1,40 @@
+<div class="geral">
+  <section class="conjunto">
+
+    <app-header></app-header>
+
+
+
+    <div class="corpo">
+      <div class="formulario">
+
+
+        <div class="form-group">
+
+          <div class="titulo">
+
+            <ion-icon class="iconTitulo" name="home-sharp"></ion-icon>
+
+            Home
+          </div>
+        </div>
+
+        <div class="form-group">
+          <app-story [stories]="stories"></app-story>
+        </div>
+
+        <div class="form-group">
+          <div class="feed">
+            <div class="feed">
+              <app-post *ngFor="let post of posts" [type]="post.type" [content]="post.content"></app-post>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </section>
+</div>

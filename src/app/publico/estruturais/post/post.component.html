@@ -1,0 +1,164 @@
+<div *ngIf="type === 'numeros'" class="post">
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="10 ini">
+      <img [src]="content.imgProfile" class="imagem-perfil"> {{ content.profile }}
+    </ion-col>
+    <ion-col size="2 fim">
+      <ion-icon name="ellipsis-vertical-sharp" (click)="toggleOptions('numeros')"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="showOptions === 'numeros'" class="menu d-flex flex-column align-items-start justify-content-between">
+    <div class="text-div">
+      <p class="text-p"><ion-icon name="information-circle-sharp"></ion-icon>Publicação são de
+        responsabilidade do artista que a
+        disponibilizou.</p>
+    </div>
+  </div>
+
+  <div class="music-item">
+    <ion-row class="align-items-center justify-content-between">
+      <ion-col size="6">
+        <span class="nomeMusic">Participantes</span><br>
+        <span class="nomeArtista">{{ content.participantes }}</span>
+      </ion-col>
+      <ion-col size="6" class="fim">
+        <span class="nomeMusic">Interações</span><br>
+        <span class="nomeArtista">{{ content.interacoes }}</span>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>
+
+<div *ngIf="type === 'musicas'" class="post">
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="10 ini">
+      <img [src]="content.imgProfile" class="imagem-perfil"> {{ content.profile }}
+    </ion-col>
+    <ion-col size="2 fim">
+      <ion-icon name="ellipsis-vertical-sharp" (click)="toggleOptions('musicas')"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="showOptions === 'musicas'" class="menu d-flex flex-column align-items-start justify-content-between">
+    <div class="text-div">
+      <p class="text-p"><ion-icon name="information-circle-sharp"></ion-icon>Publicação são de
+        responsabilidade do artista que a
+        disponibilizou.</p>
+    </div>
+  </div>
+
+  <p class="ini">Músicas mais pedidas:</p>
+  <div *ngFor="let musica of content.musicas; let i = index" class="music-item">
+    <ion-row class="align-items-center justify-content-between">
+      <ion-col size="2"><img src="assets/example.jpg" class="imagem-music"></ion-col>
+      <ion-col size="8">
+        <div class="ajusteLeft">
+          <span class="nomeMusic">{{ musica.title }}</span><br>
+          <span class="nomeArtista">{{ musica.artist }}</span>
+        </div>
+      </ion-col>
+      <ion-col size="2 fim">
+        <ion-icon [name]="musica.liked ? 'heart-sharp' : 'heart-outline'" [color]="musica.liked ? 'danger' : ''"
+          (click)="toggleLike(i)">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>
+
+<div *ngIf="type === 'image'" class="post">
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="10 ini">
+      <img [src]="content.imgProfile" class="imagem-perfil"> {{ content.profile }}
+    </ion-col>
+    <ion-col size="2 fim">
+      <ion-icon name="ellipsis-vertical-sharp" (click)="toggleOptions('image')"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="showOptions === 'image'" class="menu d-flex flex-column align-items-start justify-content-between">
+    <div class="text-div">
+      <p class="text-p"><ion-icon name="information-circle-sharp"></ion-icon>Publicação são de
+        responsabilidade do artista que a
+        disponibilizou.</p>
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-counter">
+      <span>{{ currentIndex + 1 }} / {{ content.images.length }}</span>
+    </div>
+
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let image of content.images; let i = index"
+          [class.active]="i === currentIndex">
+          <img [src]="image" class="d-block w-100" alt="Imagem {{i + 1}}">
+        </div>
+      </div>
+      <button class="carousel-control-prev" (click)="prevSlide()">
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" (click)="nextSlide()">
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="12 ini">
+      <p>{{ content.legenda }}</p>
+    </ion-col>
+  </ion-row>
+</div>
+
+<div *ngIf="type === 'link'" class="post">
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="10 ini">
+      <img [src]="content.imgProfile" class="imagem-perfil"> {{ content.profile }}
+    </ion-col>
+    <ion-col size="2 fim">
+      <ion-icon name="ellipsis-vertical-sharp" (click)="toggleOptions('link')"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="showOptions === 'link'" class="menu d-flex flex-column align-items-start justify-content-between">
+    <div class="text-div">
+      <p class="text-p"><ion-icon name="information-circle-sharp"></ion-icon>Publicação são de
+        responsabilidade do artista que a
+        disponibilizou.</p>
+    </div>
+  </div>
+
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="12 ini"><a [href]="content.url">{{ content.title }}</a></ion-col>
+  </ion-row>
+</div>
+
+<div *ngIf="type === 'text'" class="post">
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="10 ini">
+      <img [src]="content.imgProfile" class="imagem-perfil"> {{ content.profile }}
+    </ion-col>
+    <ion-col size="2 fim">
+      <ion-icon name="ellipsis-vertical-sharp" (click)="toggleOptions('text')"></ion-icon>
+    </ion-col>
+  </ion-row>
+
+
+  <div *ngIf="showOptions === 'text'" class="menu d-flex flex-column align-items-start justify-content-between">
+    <div class="text-div">
+      <p class="text-p"><ion-icon name="information-circle-sharp"></ion-icon>Publicação são de
+        responsabilidade do artista que a
+        disponibilizou.</p>
+    </div>
+  </div>
+
+
+  <ion-row class="align-items-center justify-content-between">
+    <ion-col size="12 ini">
+      <p>{{ content.text }}</p>
+    </ion-col>
+  </ion-row>
+</div>

@@ -1,0 +1,38 @@
+<div class="geral">
+  <section class="conjunto">
+
+    <app-header></app-header>
+
+    <div class="corpo">
+
+      <div class="formulario">
+        <div class="form-group">
+          <div class="titulo">
+            <ion-icon class="iconTitulo" name="share-social-sharp"></ion-icon>
+            Compartilhar
+          </div>
+        </div>
+
+        <div class="form-group" (click)="copiarLink()">
+          <h1>Evento #{{idEvento}}</h1>
+          <div class="equipe-imagem">
+            <img [src]="qrCodeUrl" alt="QR Code">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row pointer">
+            <div class="col-12 d-flex align-items-center" (click)="copiarLink()">
+              <ion-icon class="me-2 iconTitulo" name="copy-sharp"></ion-icon>
+
+              {{ urlCompartilhar }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+
+  </section>
+</div>

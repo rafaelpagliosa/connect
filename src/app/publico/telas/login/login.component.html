@@ -1,0 +1,78 @@
+<div class="geral">
+  <section class="conjunto">
+
+
+    <app-header></app-header>
+
+
+    <div class="corpo" *ngIf="!isLoading">
+      <div class="formulario central">
+        <div class="form-group">
+          <h2 class="titulo">CONNECT<span class="fest">login</span></h2>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-12">
+              <input type="text" class="form-control input" id="grid-email" placeholder="E-mail" name="email"
+                [ngModelOptions]="{standalone: true}" [(ngModel)]='email' inputmode="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-12">
+              <input type="password" class="form-control input" id="grid-senha" placeholder="Senha" name="senha"
+                [ngModelOptions]="{standalone: true}" [(ngModel)]='senha' inputmode="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-6"> <span class="esqueceu">Esqueceu a senha?</span></div>
+
+            <div class="col-6">
+              <div class="botao form-control text-center" (click)="entrar()">
+                <span>Entrar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-6"></div>
+            <div class="col-6 text-center">
+              <ion-icon name="logo-facebook" class="mx-2 botao"></ion-icon>
+              <ion-icon name="logo-google" class="mx-2 botao"></ion-icon>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="corpo" *ngIf="isLoading">
+      <app-carregamento [message]="'Carregando informações do Evento...'"></app-carregamento>
+    </div>
+
+
+
+    <div class="footer">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-12">
+          <p>CONNECT<span class="fest">fest</span>- by Connect <br>
+            www.connect.com.br
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

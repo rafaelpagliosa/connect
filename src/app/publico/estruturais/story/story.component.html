@@ -1,0 +1,21 @@
+<div class="form-group">
+  <div class="row story-row">
+    <div class="stories-container" (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)"
+      (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()" (touchstart)="onTouchStart($event)"
+      (touchmove)="onTouchMove($event)" (touchend)="onTouchEnd()">
+      <div class="story" (click)="roteamento('fotos')">
+        <div class="story-preview-ini">
+          <ion-icon class="iconAdd" name="add-sharp"></ion-icon>
+        </div>
+        <p>Participe</p>
+      </div>
+
+      <div class="story" *ngFor="let story of stories" (click)="onStoryClick(story)">
+        <div class="story-preview">
+          <img [src]="story.img" alt="story preview" />
+        </div>
+        <p>{{ story.user }}</p>
+      </div>
+    </div>
+  </div>
+</div>

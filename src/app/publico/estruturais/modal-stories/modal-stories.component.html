@@ -1,0 +1,19 @@
+<div class="geral">
+  <div class="modal-container">
+    <div class="header">
+      <div class="row align-items-center">
+        <div class="col-10 d-flex align-items-center">
+          <ion-icon class="iconPerson" name="person-circle-sharp"></ion-icon>
+          <span class="ml-2">{{ getCurrentTitle() }}</span>
+        </div>
+        <div class="col-2 d-flex justify-content-end align-items-center" (click)="closeDialog()">
+          <ion-icon class="iconAdd" name="close-sharp"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="previus" (click)="prevImage()"></div>
+    <img [src]="getCurrentImage()" alt="Imagem atual" class="modal-image">
+    <div class="next" (click)="nextImage()"></div>
+    <div class="marca"> CONNECT<span class="fest">fest</span> #{{idEvento}}</div>
+  </div>
+</div>

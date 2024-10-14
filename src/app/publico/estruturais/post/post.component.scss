@@ -1,0 +1,164 @@
+.post {
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2%;
+}
+
+:host-context(.light) .post {
+  background-color: #f9f9f9;
+  color: #2f2f2f;
+}
+
+:host-context(.dark) .post {
+  background-color: #393737;
+  color: #fff;
+}
+
+.music-item {
+  margin-bottom: 10px;
+}
+
+.ini {
+  text-align: left;
+}
+
+.fim {
+  text-align: right;
+}
+
+.imagem-perfil {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.imagem-music {
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+
+
+
+
+.explica {
+  padding: 1%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+}
+
+:host-context(.light) .explica {
+  background-color: #f0eaea;
+}
+
+:host-context(.dark) .explica {
+  background-color: #313131;
+}
+
+.saibaMais {
+  color: #0097b2;
+}
+
+.margin-card-texto {
+  padding-left: 2%;
+}
+
+.ajusteLeft {
+  margin-left: -6%;
+}
+
+.nomeMusic {
+  font-size: 1.2em;
+  font-weight: bold;
+
+}
+
+.nomeArtista {
+  font-size: 0.8em;
+}
+
+
+
+
+/*CAROUSEL*/
+.carousel-container {
+  max-height: 337px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.carousel-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  z-index: 500;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+
+
+.div-propaganda {
+  max-height: 337px;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-propaganda {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.verificado {
+  color: #249ef0;
+}
+
+:host-context(.light) .colorWhite {
+  color: #313131;
+}
+
+:host-context(.dark) .colorWhite {
+  color: #fff;
+}
+
+
+
+.menu {
+  border-radius: 4px;
+  right: 0;
+  width: 100%;
+  font-size: 0.6rem;
+  max-height: 40px;
+  text-align: right;
+}
+
+.text-div {
+  text-align: right;
+}

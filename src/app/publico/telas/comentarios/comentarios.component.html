@@ -1,0 +1,43 @@
+<div class="geral">
+  <section class="conjunto">
+
+    <app-header></app-header>
+
+    <div class="corpo">
+
+      <div class="formulario">
+        <div class="form-group">
+          <div class="titulo">
+            <ion-icon class="iconTitulo" name="chatbox-ellipses-sharp"></ion-icon>
+            Comentários
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+
+            <div class="col-9">
+              <input type="text" id="nome" [(ngModel)]="nome" name="nome" class="form-control"
+                placeholder="Digite seu nome" (focus)="onNome()">
+            </div>
+
+            <div class="col-3">
+              <input type="text" id="mesa" [(ngModel)]="mesa" name="mesa" class="form-control" placeholder="Mesa"
+                inputmode="numeric" maxlength="3">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <textarea id="comentario" [(ngModel)]="comentario" name="comentario" class="form-control"
+            placeholder="Digite seu comentário" rows="10" (focus)="onComentario()"></textarea>
+        </div>
+
+        <button class="btn-enviar" (click)="enviarComentario()">Enviar</button>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </section>
+</div>

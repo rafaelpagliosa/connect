@@ -1,0 +1,55 @@
+<div class="geral">
+  <section class="conjunto">
+
+    <app-header></app-header>
+
+    <div class="corpo">
+
+      <div class="formulario">
+        <div class="form-group">
+          <div class="titulo">
+            <ion-icon class="iconTitulo" name="star-sharp"></ion-icon>
+            Artista
+          </div>
+        </div>
+
+        <div class="form-group perfil-artista">
+          <div class="foto-artista">
+            <img src="assets/example.jpg">
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+          <div class="info-artista">
+            <h1>DJ Marshmello</h1>
+
+
+            <div class="txt-left icones-redes">
+              <ion-icon class="icon" name="logo-instagram"
+                (click)="redirectToLink('https://instagram.com/usuario')"></ion-icon>
+              <ion-icon class="icon" name="logo-facebook"
+                (click)="redirectToLink('https://facebook.com/usuario')"></ion-icon>
+              <ion-icon class="icon" name="logo-whatsapp"
+                (click)="redirectToLink('https://twitter.com/usuario')"></ion-icon>
+            </div>
+
+
+            <p class="biografia">
+              Christopher Comstock, mais conhecido como Marshmello é um DJ e produtor musical
+              norte-americano.
+              Ficou amplamente conhecido após a música "Alone" alcançar o Billboard Hot 100. O DJ costuma
+              fazer remixes de músicas de outros cantores, mas também as compõe
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </section>
+</div>

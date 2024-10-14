@@ -1,0 +1,24 @@
+<div class="footer" [ngClass]="{'footer': true, 'hidden-footer': isFooterHidden}">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-2">
+      <ion-icon (click)="roteamento('home')" [ngClass]="{'active': currentRoute === 'home'}"
+        name="home-sharp"></ion-icon>
+    </div>
+    <div class="col-2">
+      <ion-icon (click)="roteamento('comentarios')" [ngClass]="{'active': currentRoute === 'comentarios'}"
+        name="chatbox-ellipses-sharp"></ion-icon>
+    </div>
+    <div class="col-2">
+      <ion-icon (click)="roteamento('musicas')" [ngClass]="{'active': currentRoute === 'musicas'}"
+        name="musical-notes-sharp"></ion-icon>
+    </div>
+    <div class="col-2">
+      <ion-icon (click)="roteamento('fotos')" [ngClass]="{'active': currentRoute === 'fotos'}"
+        name="camera-sharp"></ion-icon>
+    </div>
+    <div class="col-2">
+      <ion-icon (click)="roteamento('artista')" [ngClass]="{'active': currentRoute === 'artista'}"
+        name="star-sharp"></ion-icon>
+    </div>
+  </div>
+</div>
